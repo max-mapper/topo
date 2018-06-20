@@ -1,0 +1,24 @@
+{
+  "name": "topo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wzrd index.js:bundle.js",
+    "build": "browserify index.js -o bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.6.2",
+    "drag-and-drop-files": "0.0.1",
+    "filereader-stream": "^2.0.0",
+    "gunzip-maybe": "^1.4.1",
+    "leaflet.locatecontrol": "^0.62.0",
+    "random-access-idb": "^1.0.4",
+    "run-parallel-limit": "^1.0.5",
+    "tar-stream": "^1.6.1",
+    "xyz-affair": "^0.9.1"
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <title>topo maps</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="static/leaflet-0.7.5.css" />
+    <link rel="stylesheet" href="static/font-awesome-4.7.0.min.css">
+    <link rel="stylesheet" href="static/L.Control.Locate-0.62.0.min.css" />
+    <link href='static/leaflet.fullscreen-1.0.1.css' rel='stylesheet' />    
+    <link href='static/leaflet.offline-1.0.0.css' rel='stylesheet' />    
+    <script src="static/leaflet-0.7.5.min.js"></script>
+    <script src="static/L.Control.Locate-0.62.0.min.js" charset="utf-8"></script>
+    <script src='static/Leaflet.fullscreen-1.0.1.min.js'></script>
+
+    <style>
+        body { margin:0; padding:0; }
+        body, table, tr, td, th, div, h1, h2, input { font-family: "Calibri", "Trebuchet MS", "Ubuntu", Serif; font-size: 11pt; }
+        #map { position:absolute; top:0; bottom:0; width:100%; } /* full size */
+        .ctl {
+            padding: 2px 10px 2px 10px;
+            background: white;
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            text-align: right;
+        }
+        .title {
+            font-size: 18pt;
+            font-weight: bold;
+        }
+        .src {
+            font-size: 10pt;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="map"></div>
+<script src="bundle.js"></script>
+
+</body>
+</html>
+

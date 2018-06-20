@@ -2,6 +2,7 @@
 /* **** Leaflet **** */
 
 var loadOfflineControl = require('./leaflet-offline')
+var TILES='https://tiles.maxogden.com/gt2tiles/usfs'
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js')
@@ -34,7 +35,7 @@ var toner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {att
 var white = L.tileLayer("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAA1BMVEX///+nxBvIAAAAH0lEQVQYGe3BAQ0AAADCIPunfg43YAAAAAAAAAAA5wIhAAAB9aK9BAAAAABJRU5ErkJggg==");
 
 // Overlay layers (TMS)
-var lyr = L.tileLayer('http://google2.publicbits.org:8081/tiles/gt2tiles/usfs/{z}/{x}/{y}.png', {tms: true, opacity: 1, attribution: ""});
+var lyr = L.tileLayer(TILES + '/{z}/{x}/{y}.png', {tms: true, opacity: 1, attribution: ""});
 
 loadOfflineControl(L)
 
@@ -79,7 +80,7 @@ window.saveTiles = function (tiles, onprogress) {
   var parallelLimit = require('run-parallel-limit')
   var reqs = tiles.map(function (t) {
     return function (callback) {
-      var url = `https://tiles.maxogden.com/gt2tiles/usfs/${t.z}/${t.x}/${t.y}.png`
+      var url = `${TILES}/${t.z}/${t.x}/${t.y}.png`
       fetch(url).then(function (response) {
         onprogress(null, url)
         callback(null)        

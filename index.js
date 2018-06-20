@@ -78,7 +78,7 @@ window.saveTiles = function (tiles, onprogress) {
   var parallelLimit = require('run-parallel-limit')
   var reqs = tiles.map(function (t) {
     return function (callback) {
-      var url = `http://google2.publicbits.org:8081/tiles/gt2tiles/usfs/${t.z}/${t.x}/${t.y}.png`
+      var url = `https://tiles.maxogden.com/gt2tiles/usfs/${t.z}/${t.x}/${t.y}.png`
       fetch(url).then(function (response) {
         onprogress(null, url)
         callback(null)        

@@ -1,0 +1,11 @@
+{
+  "name": "topo",
+  "short_name": "topo",
+  "description": "topo maps",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#2ACA4B",
+  "background_color": "#fff"
+}

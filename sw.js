@@ -1,10 +1,11 @@
 self.addEventListener('install', function (event) {
   self.skipWaiting();
   event.waitUntil(
-    caches.open('usfs-tiles').then(function(cache) {
+    caches.open('topo-app').then(function(cache) {
       return cache.addAll([
         '/',
-        '/manifest.json',
+        '/index.html',
+        '/manifest.webmanifest',
         'static/leaflet-0.7.5.css',
         'static/font-awesome-4.7.0.min.css',
         'static/L.Control.Locate-0.62.0.min.css',
@@ -12,8 +13,8 @@ self.addEventListener('install', function (event) {
         'static/L.Control.Locate-0.62.0.min.js',
         'static/fontawesome-webfont.woff2?v=4.7.0',
         'static/leaflet.fullscreen-1.0.1.css',
-        'static/Leaflet.fullscreen-1.0.1.min.js'
-        // 'bundle.js'
+        'static/Leaflet.fullscreen-1.0.1.min.js',
+        'bundle.js'
       ])
     })
   )
@@ -21,7 +22,7 @@ self.addEventListener('install', function (event) {
 
 self.addEventListener('fetch', function(event) {
   var url = event.request.url
-  if (!(/publicbits/.test(url))) {
+  if (!(/tiles.maxogden.com/.test(url))) {
     console.log('do not proxy', url)
     event.respondWith(fetch(event.request))
     return

@@ -6,9 +6,13 @@ var appFiles = [
   '/static/L.Control.Locate-0.62.0.min.css',
   '/static/leaflet-0.7.5.min.js',
   '/static/L.Control.Locate-0.62.0.min.js',
-  '/static/fontawesome-webfont.woff2',
+  '/fonts/fontawesome-webfont.woff2?v=4.7.0',
   '/static/leaflet.fullscreen-1.0.1.css',
   '/static/Leaflet.fullscreen-1.0.1.min.js',
+  '/static/leaflet.offline-1.0.0.css',
+  '/static/images/layers-2x.png',
+  '/static/images/offline@2x.png',
+  '/static/images/fullscreen@2x.png',
   '/bundle.js'
 ]
 

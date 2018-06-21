@@ -15,7 +15,11 @@ self.addEventListener('install', function (event) {
         '/static/leaflet.fullscreen-1.0.1.css',
         '/static/Leaflet.fullscreen-1.0.1.min.js',
         '/bundle.js'
-      ])
+      ]).then(function () {
+        console.log('addAll success')
+      }, function (err) {
+        console.error('addAll fail', err)
+      })
     }, function (err) {
       console.error('error adding cache list', err)
     })

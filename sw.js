@@ -6,16 +6,18 @@ self.addEventListener('install', function (event) {
         '/',
         '/index.html',
         '/manifest.webmanifest',
-        'static/leaflet-0.7.5.css',
-        'static/font-awesome-4.7.0.min.css',
-        'static/L.Control.Locate-0.62.0.min.css',
-        'static/leaflet-0.7.5.min.js',
-        'static/L.Control.Locate-0.62.0.min.js',
-        'static/fontawesome-webfont.woff2?v=4.7.0',
-        'static/leaflet.fullscreen-1.0.1.css',
-        'static/Leaflet.fullscreen-1.0.1.min.js',
-        'bundle.js'
+        '/static/leaflet-0.7.5.css',
+        '/static/font-awesome-4.7.0.min.css',
+        '/static/L.Control.Locate-0.62.0.min.css',
+        '/static/leaflet-0.7.5.min.js',
+        '/static/L.Control.Locate-0.62.0.min.js',
+        '/static/fontawesome-webfont.woff2?v=4.7.0',
+        '/static/leaflet.fullscreen-1.0.1.css',
+        '/static/Leaflet.fullscreen-1.0.1.min.js',
+        '/bundle.js'
       ])
+    }, function (err) {
+      console.error('error adding cache list', err)
     })
   )
 })
@@ -37,6 +39,8 @@ self.addEventListener('fetch', function(event) {
         }, function(error) {
           console.log('fetch err', error)
         })
+      }, function (err) {
+        console.error('cache match failed', err)
       })
     })
   )

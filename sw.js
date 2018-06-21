@@ -23,7 +23,7 @@ self.addEventListener('install', function (event) {
 self.addEventListener('fetch', function(event) {
   var parsed = require('url').parse(event.request.url)
   if (/tiles.maxogden.com/.test(event.request.url)) {
-    CACHE = 'usfs-tile'
+    CACHE = 'usfs-tiles'
   } else if (appFiles.indexOf(parsed.pathname) > -1) {
     CACHE = 'topo-app'
   } else {
